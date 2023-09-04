@@ -32,7 +32,6 @@ public class FileStore {
         return storeFileResult;
     }
 
-
     public UploadFile storeFile(MultipartFile multipartFile) throws IOException {
         if (multipartFile.isEmpty()) {
             return null;
@@ -42,7 +41,6 @@ public class FileStore {
         String storeFileName = createStoreFileName(originalFilename);
         multipartFile.transferTo(new File((getFullPath(storeFileName))));
         return new UploadFile(originalFilename, storeFileName);
-
     }
 
     private String createStoreFileName(String originalFilename) {
